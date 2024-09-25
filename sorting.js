@@ -230,16 +230,91 @@
   
 
 
-function mergeSort(arr){
-    if(arr.length < 2){
-        return arr
-    }
-    let mid = Math.floor(arr.length / 2)
-    let left = arr.slice(0,mid)
-    let right = arr.slice(mid)
-    return merge(mergeSort(left),mergeSort(right))
-}
+// function mergeSort(arr){
+//     if(arr.length < 2){
+//         return arr
+//     }
+//     let mid = Math.floor(arr.length / 2)
+//     let left = arr.slice(0,mid)
+//     let right = arr.slice(mid)
+//     return merge(mergeSort(left),mergeSort(right))
+// }
 
-function merge(left , right){
-    
-}
+// function merge(left , right){
+//     let sortedArr =[]
+// while(left.length && right.length){
+//     if(left[0] <= right[0]){
+//         sortedArr.push(left.shift())
+//     }else{
+//         sortedArr.push(right.shift())
+//     }
+// }
+// return [...sortedArr,...left,...right]
+// }
+
+// let arr= [3,5,6,7,-2,1,9]
+// console.log(mergeSort(arr));
+
+
+
+
+
+// function bubbleSort(arr){
+//     for(let i=0;i<arr.length;i++){
+//         for(let j=i+1;j<arr.length;j++){
+//             if(arr[i] > arr[j] ){
+//                 let temp = arr[i]
+//                 arr[i] = arr[j]
+//                 arr[j] = temp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// let arr=[3,2,5,4,6,-3,1]
+
+// console.log(bubbleSort(arr));
+
+
+
+// function insertionSort(arr){
+//     for(let i = 0 ; i < arr.length ; i++){
+//         let insertion = arr[i]
+//         let j = i-1
+//         while(j >= 0 && arr[j] > insertion){
+//             arr[j+1] = arr[j]
+//             j = j-1
+//         }
+//         arr[j+1] = insertion
+//     }
+//     return arr
+// }
+
+// let arr =[5,3,9,-3,2,1,7]
+// console.log(insertionSort(arr));
+
+
+
+// function quickSort(arr){
+//     if(arr.length < 2){
+//         return arr
+//     }
+//     let pivot = arr[arr.length-1]
+//     let left = []
+//     let right = []
+//     for(let i = 0; i < arr.length-1 ; i++){
+//         if(arr[i] < pivot){
+//             left.push(arr[i])
+//         }else{
+//             right.push(arr[i])
+//         }
+//     }
+//     return [...quickSort(left) , pivot , ...quickSort(right)]
+// }
+
+// let arr = [2,5,-2,1,3,9,4]
+// console.log(quickSort(arr));
+
+
+
