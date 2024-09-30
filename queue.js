@@ -83,3 +83,93 @@
 
 // console.log(queue.size());
 // queue.print()
+
+
+// class Queue{
+//     constructor(){
+//         this.items = []
+//     }
+
+//     enque(element){
+//         this.items.push(element)
+//     }
+//     deque(){
+//         this.items.shift()
+//     }
+//     isEmpty(){
+//         this.items.length === 0
+//     }
+//     peek(){
+//         if(this.isEmpty()){
+//             return this.items[0]
+//         }
+//         return null
+//     }
+
+//     size(){
+//         return this.items.length
+//     }
+//     print(){
+//         console.log(this.items.toString());
+        
+//     }
+// }
+
+// const queue= new Queue()
+
+// console.log(queue.isEmpty());
+// queue.enque(10)
+// queue.enque(20)
+// queue.enque(30)
+// queue.deque()
+// queue.peek()
+
+// console.log('this is the size of the queue' , queue.size());
+
+// queue.print()
+
+
+// class Queue{
+//     constructor(){
+//         this.items = []
+//     }
+
+//     enque(element){
+//         this.items.push(element)
+//     }
+//     deque(){
+//         this.items.shift()
+//     }
+//     isEmpty(){
+//         return this.items.length === 0
+//     }
+//     peek(){
+//         if(this.isEmpty()){
+//             return [0]
+//         }
+//         return null
+//     }
+//     size(){
+//         return this.items.length
+//     }
+//     print(){
+//         console.log(this.items.toString());
+        
+//     }
+// }
+
+
+
+
+// const queue= new Queue()
+
+
+// queue.enque(10)
+// queue.enque(20)
+// queue.enque(30)
+// queue.deque()
+// queue.peek()
+
+// console.log('this is the size of the queue' , queue.size());
+
+// queue.print()

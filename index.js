@@ -2097,23 +2097,6 @@
 // console.log(reverse(str , str.length-1));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // search(arr, target){
 //     let curr = this.head
 //     let i = 0 
