@@ -643,3 +643,179 @@ const { log } = require("console")
 
 // console.log('is this bst ? :',bst.isBST());
 
+// class Node {
+//     constructor(value){
+//         this.value = value 
+//         this.left = null 
+//         this.right = null
+//     }
+// }
+
+// class binarySearchTree{
+//     constructor(){
+
+//         this.root = null
+//     }
+
+//     isEmpty(){
+//         return this.root === null
+//     }
+
+//     insert(value){
+//         const newNode  = new Node(value)
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+//     }
+
+//     insertNode(root , newNode){
+//         if(newNode.value < root.value){
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 this.insertNode(root.left , newNode)
+//             }
+//         }else{
+//             if(root.right === null){
+//                 root.right = newNode
+//             }else{
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
+
+//     isBst(){
+//         return  this.validateBst(this.root , -Infinity , Infinity)
+//     }
+
+//     validateBst(node , min , max){
+//         if(!node){
+//             return true
+//         }
+
+//         if(node.value <= min || node.value >= max){
+//             return false
+//         }
+
+//         return this.validateBst(node.left , min , node.value) && this.validateBst(node.right , node.value , max)
+//     }
+
+//     search(root , value ){
+//         if(!root){
+//             return false
+//         }else{
+//             if(root.value === value){
+//                 return true 
+//             }else if (value < root.value){
+//                 return this.search(root.left , value)
+//             }else{
+//                 return this.search(root.right , value )
+//             }
+//         }
+//     }
+// }
+
+
+// const bst = new binarySearchTree()
+
+// bst.insert(5)
+// bst.insert(10)
+// bst.insert(15)
+// console.log('is this a bst', bst.isBst());
+
+// console.log(bst.search(bst.root , 5));
+// console.log(bst.search(bst.root , 10));
+// console.log(bst.search(bst.root , 15));
+
+
+
+class Node {
+    constructor(value){
+        this.value  = value 
+        this.left = null
+        this.right = null
+    }
+}
+
+class binarySearchTree{
+    constructor(){
+        this.root = null
+    }
+
+
+    isEmpty(){
+        return this.root === null
+    }
+
+    insert(value){
+        let newNode = new Node(value)
+        if(this.isEmpty()){
+            this.root = newNode
+        }else{
+            this.insertNode(this.root , newNode)
+        }
+    }
+
+    insertNode(root , newNode){
+        if(newNode.value < root.value){
+            if(root.left === null){
+                root.left = newNode
+            }else{
+                this.insertNode(root.left , newNode)
+            }
+        }else{
+            if(root.right === null){
+                root.right = newNode
+            }else{
+                this.insertNode(root.right , newNode)
+            }
+        }
+    }
+
+    isBst(){
+        return this.validateBst(this.root , -Infinity , Infinity)
+    }
+
+    validateBst(node , min , max){
+        if(!node){
+            return true
+        }
+
+        if(node.value <= min || node.value >= max){
+            return false 
+
+        }
+
+        return this.validateBst(node.left , min , node.value) && this.validateBst(node.right , node.value , max)
+    }
+
+    search(root , value){
+        if(!root){
+            return false
+        }else{
+            if(root.value === value){
+                return true 
+            }else if(value < root.value){
+                return this.search(root.left , value)
+            }else{
+                return this.search(root.right , value)
+            }
+        }
+    }
+}
+
+
+const bst = new binarySearchTree()
+
+bst.insert(5)
+bst.insert(10)
+bst.insert(15)
+
+console.log('is this bst  ? :' , bst.isBst());
+
+console.log(bst.search(bst.root , 5));
+console.log(bst.search(bst.root , 10));
+console.log(bst.search(bst.root , 15));
+console.log(bst.search(bst.root , 125));
