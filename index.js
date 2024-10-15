@@ -2215,3 +2215,109 @@
 
 
 
+
+
+
+
+
+
+// class Node {
+//     constructor(value){
+//         this.value = value 
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class binarySearchTree{
+//     constructor(){
+//         this.root = null
+//     }
+
+//     isEmpty(){
+//         return this.root === null
+//     }
+
+//     insert(value){
+//         let newNode = new Node(value)
+
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+
+//     }
+
+//     insertNode(root , newNode){
+//         if(newNode.value < root.value){
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 console.log(root.left.value,'root.left.value');
+                
+//                 this.insertNode(root.left  , newNode)
+//             }
+//         }else{
+//             if(root.right === null){
+//                 root.right = newNode
+//             }else{
+                
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
+
+
+// }
+
+
+
+// const bts = new binarySearchTree()
+
+// bts.insert(5)
+// bts.insert(3)
+// bts.insert(4)
+// bts.insert(6)
+// bts.insert(9)
+
+
+
+
+
+class Node {
+    constructor(value){
+        this.value = value
+        this.left = null 
+        this.right = null
+    }
+}
+
+class binarySearchTree{
+    constructor(){
+        this.root = null
+    }
+
+    isEmpty(){
+        return this.root === null
+    }
+
+    insert(value){
+        let newNode = new Node(value)
+        if(this.isEmpty()){
+            this.root = newNode
+        }else{
+            this.insertNode(this.root , newNode)
+        }
+    }
+
+    insertNode(root , newNode){
+        if(newNode.value < root.value){
+            if(this.left === null){
+                this.left = newNode
+            }else{
+                this.insertNode(root.left , newNode)
+            }
+        }
+    }
+}

@@ -749,30 +749,30 @@ class binarySearchTree{
         return this.root === null
     }
 
-    insert(value){
-        let newNode = new Node(value)
-        if(this.isEmpty()){
-            this.root = newNode
-        }else{
-            this.insertNode(this.root , newNode)
-        }
-    }
+    // insert(value){
+    //     let newNode = new Node(value)
+    //     if(this.isEmpty()){
+    //         this.root = newNode
+    //     }else{
+    //         this.insertNode(this.root , newNode)
+    //     }
+    // }
 
-    insertNode(root , newNode){
-        if(newNode.value < root.value){
-            if(root.left === null){
-                root.left = newNode
-            }else{
-                this.insertNode(root.left , newNode)
-            }
-        }else{
-            if(root.right === null){
-                root.right = newNode
-            }else{
-                this.insertNode(root.right , newNode)
-            }
-        }
-    }
+    // insertNode(root , newNode){
+    //     if(newNode.value < root.value){
+    //         if(root.left === null){
+    //             root.left = newNode
+    //         }else{
+    //             this.insertNode(root.left , newNode)
+    //         }
+    //     }else{
+    //         if(root.right === null){
+    //             root.right = newNode
+    //         }else{
+    //             this.insertNode(root.right , newNode)
+    //         }
+    //     }
+    // }
 
     isBst(){
         return this.validateBst(this.root , -Infinity , Infinity)
@@ -809,9 +809,9 @@ class binarySearchTree{
 
 const bst = new binarySearchTree()
 
-bst.insert(5)
-bst.insert(10)
-bst.insert(15)
+// bst.insert(5)
+// bst.insert(10)
+// bst.insert(15)
 
 console.log('is this bst  ? :' , bst.isBst());
 
