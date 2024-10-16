@@ -749,30 +749,30 @@ class binarySearchTree{
         return this.root === null
     }
 
-    // insert(value){
-    //     let newNode = new Node(value)
-    //     if(this.isEmpty()){
-    //         this.root = newNode
-    //     }else{
-    //         this.insertNode(this.root , newNode)
-    //     }
-    // }
+    insert(value){
+        let newNode = new Node(value)
+        if(this.isEmpty()){
+            this.root = newNode
+        }else{
+            this.insertNode(this.root , newNode)
+        }
+    }
 
-    // insertNode(root , newNode){
-    //     if(newNode.value < root.value){
-    //         if(root.left === null){
-    //             root.left = newNode
-    //         }else{
-    //             this.insertNode(root.left , newNode)
-    //         }
-    //     }else{
-    //         if(root.right === null){
-    //             root.right = newNode
-    //         }else{
-    //             this.insertNode(root.right , newNode)
-    //         }
-    //     }
-    // }
+    insertNode(root , newNode){
+        if(newNode.value < root.value){
+            if(root.left === null){
+                root.left = newNode
+            }else{
+                this.insertNode(root.left , newNode)
+            }
+        }else{
+            if(root.right === null){
+                root.right = newNode
+            }else{
+                this.insertNode(root.right , newNode)
+            }
+        }
+    }
 
     isBst(){
         return this.validateBst(this.root , -Infinity , Infinity)
@@ -789,6 +789,34 @@ class binarySearchTree{
         }
 
         return this.validateBst(node.left , min , node.value) && this.validateBst(node.right , node.value , max)
+    }
+
+    min(root){
+        if(!root.left){
+          return root.value
+            
+        }
+
+       return this.min(root.left)
+    }
+
+    max(root){
+        if(!root.right){
+            return root.value
+        }
+
+        return this.max(root.right)
+    }
+
+    findLeftNode(root , result = []){
+        if(root){
+            if(root.left){
+                result.push(root.left.value)
+                this.findLeftNode(root.left , result)
+            }
+            this.findLeftNode(root.right , result)
+        }
+        return result
     }
 
     search(root , value){
@@ -809,13 +837,17 @@ class binarySearchTree{
 
 const bst = new binarySearchTree()
 
-// bst.insert(5)
-// bst.insert(10)
-// bst.insert(15)
+bst.insert(10)
+bst.insert(5)
+bst.insert(3)
+bst.insert(15)
 
 console.log('is this bst  ? :' , bst.isBst());
+console.log('min element in this tree ? :',bst.min(bst.root));
+console.log('max element in this tree ? :',bst.max(bst.root));
 
 console.log(bst.search(bst.root , 5));
 console.log(bst.search(bst.root , 10));
 console.log(bst.search(bst.root , 15));
 console.log(bst.search(bst.root , 125));
+console.log('Left nodes in the tree:', bst.findLeftNode(bst.root));

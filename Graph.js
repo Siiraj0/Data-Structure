@@ -65,22 +65,53 @@
 
 
 
+// class Graph {
+//     constructor(){
+//         this.ajenecencyList = {}
+//     }
+
+//     addVertex(vertex){
+
+//         if(!this.ajenecencyList[vertex]){
+//             this.ajenecencyList[vertex] = []
+//         }
+//     }
+
+//     addEdge(vertex1 , vertex2){
+//         this.addVertex(vertex1)
+//         this.addVertex(vertex2)
+//         this.ajenecencyList[vertex1].push(vertex2)
+//         this.ajenecencyList[vertex2].push(vertex1)
+//     }
+// }
+
+
+
 class Graph {
+
     constructor(){
-        this.ajenecencyList = {}
+        this.adjacencyLIst = {}
+
     }
 
     addVertex(vertex){
-
-        if(!this.ajenecencyList[vertex]){
-            this.ajenecencyList[vertex] = []
+        if(!this.adjacencyLIst[vertex]){
+            this.adjacencyLIst[vertex] = []
         }
     }
 
     addEdge(vertex1 , vertex2){
         this.addVertex(vertex1)
         this.addVertex(vertex2)
-        this.ajenecencyList[vertex1].push(vertex2)
-        this.ajenecencyList[vertex2].push(vertex1)
+        this.adjacencyLIst[vertex1].push(vertex2)
+        this.adjacencyLIst[vertex2].push(vertex1)
     }
 }
+
+const grph = new Graph()
+
+grph.addEdge('a' , 'x')
+grph.addEdge('a' , 'c')
+grph.addEdge('k' , 'm')
+console.log(grph.adjacencyLIst);
+
