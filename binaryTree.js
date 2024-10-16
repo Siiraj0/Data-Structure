@@ -202,9 +202,9 @@ bt.insert(15);
 bt.insert(20);
 bt.insert(25);
 
-console.log('Is tree empty? :', bt.isEmpty()); // false
+console.log('Is tree empty? :', bt.isEmpty()); 
 
-console.log('Searching 5:', bt.search(5));   // true
-console.log('Searching 10:', bt.search(10)); // true
-console.log('Searching 15:', bt.search(15)); // true
-console.log('Searching 125:', bt.search(125)); // false
+console.log('Searching 5:', bt.search(5));   
+console.log('Searching 10:', bt.search(10)); 
+console.log('Searching 15:', bt.search(15)); 
+console.log('Searching 125:', bt.search(125)); 
