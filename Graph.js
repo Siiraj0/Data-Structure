@@ -87,31 +87,59 @@
 
 
 
-class Graph {
+// class Graph {
 
+//     constructor(){
+//         this.adjacencyLIst = {}
+
+//     }
+
+//     addVertex(vertex){
+//         if(!this.adjacencyLIst[vertex]){
+//             this.adjacencyLIst[vertex] = []
+//         }
+//     }
+
+//     addEdge(vertex1 , vertex2){
+//         this.addVertex(vertex1)
+//         this.addVertex(vertex2)
+//         this.adjacencyLIst[vertex1].push(vertex2)
+//         this.adjacencyLIst[vertex2].push(vertex1)
+//     }
+// }
+
+// const grph = new Graph()
+
+// grph.addEdge('a' , 'x')
+// grph.addEdge('a' , 'c')
+// grph.addEdge('k' , 'm')
+// console.log(grph.adjacencyLIst);
+
+class Graph{
     constructor(){
-        this.adjacencyLIst = {}
-
+        this.adjecencyList = {}
     }
 
     addVertex(vertex){
-        if(!this.adjacencyLIst[vertex]){
-            this.adjacencyLIst[vertex] = []
+        if(!this.adjecencyList[vertex]){
+            this.adjecencyList[vertex] = []
         }
+
+
     }
 
     addEdge(vertex1 , vertex2){
         this.addVertex(vertex1)
         this.addVertex(vertex2)
-        this.adjacencyLIst[vertex1].push(vertex2)
-        this.adjacencyLIst[vertex2].push(vertex1)
+        this.adjecencyList[vertex1].push(vertex2)
+        this.adjecencyList[vertex2].push(vertex1)
     }
 }
 
 const grph = new Graph()
 
-grph.addEdge('a' , 'x')
-grph.addEdge('a' , 'c')
-grph.addEdge('k' , 'm')
-console.log(grph.adjacencyLIst);
+grph.addEdge('a', 'b')
+grph.addEdge('s', 'm')
+grph.addEdge('d', 'k')
 
+console.log(grph.adjecencyList);
