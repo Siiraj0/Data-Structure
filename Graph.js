@@ -134,6 +134,18 @@ class Graph{
         this.adjecencyList[vertex1].push(vertex2)
         this.adjecencyList[vertex2].push(vertex1)
     }
+      dfsRecursive(start, visited = new Set()) {
+        if (!this.adjacencyList[start]) return; 
+        visited.add(start); 
+        console.log(start); 
+
+        
+        for (let neighbor of this.adjacencyList[start]) {
+            if (!visited.has(neighbor)) {
+                this.dfsRecursive(neighbor, visited);
+            }
+        }
+    }
 }
 
 const grph = new Graph()

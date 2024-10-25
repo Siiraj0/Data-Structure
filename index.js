@@ -2369,3 +2369,159 @@
 // console.log(bst.search(bst.root , 15));
 // console.log(bst.search(bst.root , 25));
 // console.log(bst.search(bst.root , 254));
+
+
+
+
+// class Node {
+//     constructor(value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class binarySearchTree{
+//     constructor(){
+//         this.root  = null
+//     }
+
+//     isEmpty(){
+//         return this.root === null
+//     }
+
+//     insert(value){
+//         const newNode = new Node(value)
+
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+//     }
+
+//     insertNode(root , newNode){
+
+//         if(newNode.value < root.value){
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 this.insertNode(root.left , newNode)
+//             }
+//         }else{
+//             if(root.right === null){
+//                 root.right = newNode
+//             }else{
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
+
+
+
+//     isBst(){
+//         return this.validateBst(this.root , -Infinity , Infinity)
+//     }
+
+//     validateBst(node , min , max){
+//         if(!node){
+//             return true
+//         }
+
+//         if(node.value <= min || node.value >= max){
+//             return false
+//         }
+
+//         return this.validateBst(node.left , min , node.value) && this.validateBst(node.right , node.value , max)
+
+//     }
+
+//     hightOFtree(root){
+        
+//     }
+// }
+
+
+// const bst = new binarySearchTree()
+
+// bst.insert(99)
+// bst.insert(43)
+// bst.insert(73)
+// bst.insert(5)
+
+// console.log('is it a binary seart tree :' , bst.isBst(bst.root));
+
+
+
+class Node{
+    constructor(value){
+        this.value = value
+        this.left = null
+        this.right = null
+    }
+}
+
+class binarySearchTree{
+    constructor(){
+        this.root = null
+    }
+
+    isEmpty(){
+        return this.root === null
+    }
+
+    insert(value){
+        let newNode = new Node(value)
+
+        if(this.isEmpty()){
+            this.root = newNode
+        }else{
+            this.insertNode(this.root , newNode)
+        }
+    }
+
+
+    insertNode(root , newNode){
+        if(newNode.value < root.value){
+
+            if(root.left === null){
+                root.left = newNode
+            }else{
+                this.insertNode(root.left , newNode)
+            }
+        }else{
+            if(root.right === null){
+                root.right = newNode
+            }else{
+                this.insertNode(root.right , newNode)
+            }
+        }
+    }
+
+        search(root , value){
+        if(!root){
+           return false
+        }else{
+            if(root.value === value){
+
+                return true
+            }else if(value < root.value){
+                return this.search(root.left , value )
+            }else{
+                return this.search(root.right , value )
+            }
+        }
+    }
+}
+
+const bst = new binarySearchTree()
+
+bst.insert(544)
+bst.insert(151)
+bst.insert(252)
+bst.insert(358)
+bst.insert(351)
+bst.insert(352)
+bst.insert(353)
+console.log(bst.search(bst.root , 358));
+console.log(bst.search(bst.root , 353));
