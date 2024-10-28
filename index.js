@@ -2453,75 +2453,75 @@
 
 
 
-class Node{
-    constructor(value){
-        this.value = value
-        this.left = null
-        this.right = null
-    }
-}
+// class Node{
+//     constructor(value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
 
-class binarySearchTree{
-    constructor(){
-        this.root = null
-    }
+// class binarySearchTree{
+//     constructor(){
+//         this.root = null
+//     }
 
-    isEmpty(){
-        return this.root === null
-    }
+//     isEmpty(){
+//         return this.root === null
+//     }
 
-    insert(value){
-        let newNode = new Node(value)
+//     insert(value){
+//         let newNode = new Node(value)
 
-        if(this.isEmpty()){
-            this.root = newNode
-        }else{
-            this.insertNode(this.root , newNode)
-        }
-    }
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+//     }
 
 
-    insertNode(root , newNode){
-        if(newNode.value < root.value){
+//     insertNode(root , newNode){
+//         if(newNode.value < root.value){
 
-            if(root.left === null){
-                root.left = newNode
-            }else{
-                this.insertNode(root.left , newNode)
-            }
-        }else{
-            if(root.right === null){
-                root.right = newNode
-            }else{
-                this.insertNode(root.right , newNode)
-            }
-        }
-    }
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 this.insertNode(root.left , newNode)
+//             }
+//         }else{
+//             if(root.right === null){
+//                 root.right = newNode
+//             }else{
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
 
-        search(root , value){
-        if(!root){
-           return false
-        }else{
-            if(root.value === value){
+//         search(root , value){
+//         if(!root){
+//            return false
+//         }else{
+//             if(root.value === value){
 
-                return true
-            }else if(value < root.value){
-                return this.search(root.left , value )
-            }else{
-                return this.search(root.right , value )
-            }
-        }
-    }
-}
+//                 return true
+//             }else if(value < root.value){
+//                 return this.search(root.left , value )
+//             }else{
+//                 return this.search(root.right , value )
+//             }
+//         }
+//     }
+// }
 
-const bst = new binarySearchTree()
+// const bst = new binarySearchTree()
 
-bst.insert(544)
-bst.insert(151)
-bst.insert(252)
-bst.insert(358)
-bst.insert(351)
-bst.insert(352)
-bst.insert(353)
-console.log(bst.search(bst.root , 358));
-console.log(bst.search(bst.root , 353));
+// bst.insert(544)
+// bst.insert(151)
+// bst.insert(252)
+// bst.insert(358)
+// bst.insert(351)
+// bst.insert(352)
+// bst.insert(353)
+// console.log(bst.search(bst.root , 358));
+// console.log(bst.search(bst.root , 353));
