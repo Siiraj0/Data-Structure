@@ -1400,6 +1400,39 @@ class binarySearchTree{
         }
     }
 
+    isBst(){
+        return this.validateBst(this.root , -Infinity , Infinity)
+    }
+
+    validateBst(node , min , max){
+        if(!node){
+            return true
+        }
+
+        if(node.value <= min || node.value >= max){
+            return false
+        }
+
+        return this.validateBst(node.left, min, node.value) && this.validateBst(node.right, node.value, max);
+     }
+
+
+     min(root){
+        if(!root.left){
+            return root.value
+        }
+
+        return this.min(root.left)
+     }
+
+     max(root){
+        if(!root.right){
+            return root.value
+        }
+
+        return this.max(root.right)
+     }
+
     search(root , value){
 
         if(!root){
@@ -1425,3 +1458,6 @@ bst.insert(25)
 console.log(bst.search(bst.root , 5));
 console.log(bst.search(bst.root , 15));
 console.log(bst.search(bst.root , 15));
+
+console.log('is this bst : ' , bst.isBst());
+
