@@ -1516,6 +1516,13 @@ class binarySearchTree{
         }
     }
 
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            console.log(root.value);
+            this.inOrder(root.right)
+        }
+    }
     max(root){
         if(!root.right){
             return root.value
@@ -1569,4 +1576,7 @@ class binarySearchTree{
 console.log('this is the min ',bst.min(bst.root));
  console.log('this is the max of bst ' , bst.max(bst.root));
  console.log('is that bst' , bst.isBst());
+
+ console.log(bst.inOrder(bst.root));
+ 
  
