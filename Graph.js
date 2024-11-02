@@ -115,43 +115,71 @@
 // grph.addEdge('k' , 'm')
 // console.log(grph.adjacencyLIst);
 
-class Graph{
+// class Graph{
+//     constructor(){
+//         this.adjecencyList = {}
+//     }
+
+//     addVertex(vertex){
+//         if(!this.adjecencyList[vertex]){
+//             this.adjecencyList[vertex] = []
+//         }
+
+
+//     }
+
+//     addEdge(vertex1 , vertex2){
+//         this.addVertex(vertex1)
+//         this.addVertex(vertex2)
+//         this.adjecencyList[vertex1].push(vertex2)
+//         this.adjecencyList[vertex2].push(vertex1)
+//     }
+//       dfsRecursive(start, visited = new Set()) {
+//         if (!this.adjacencyList[start]) return; 
+//         visited.add(start); 
+//         console.log(start); 
+
+        
+//         for (let neighbor of this.adjacencyList[start]) {
+//             if (!visited.has(neighbor)) {
+//                 this.dfsRecursive(neighbor, visited);
+//             }
+//         }
+//     }
+// }
+
+// const grph = new Graph()
+
+// grph.addEdge('a', 'b')
+// grph.addEdge('s', 'm')
+// grph.addEdge('d', 'k')
+
+// console.log(grph.adjecencyList);
+
+
+
+class Graph {
     constructor(){
-        this.adjecencyList = {}
+        this.adjacencyList = {}
     }
 
     addVertex(vertex){
-        if(!this.adjecencyList[vertex]){
-            this.adjecencyList[vertex] = []
+        if(!this.adjacencyList[vertex]){
+            this.adjacencyList[vertex] = []
         }
-
-
     }
 
     addEdge(vertex1 , vertex2){
         this.addVertex(vertex1)
         this.addVertex(vertex2)
-        this.adjecencyList[vertex1].push(vertex2)
-        this.adjecencyList[vertex2].push(vertex1)
-    }
-      dfsRecursive(start, visited = new Set()) {
-        if (!this.adjacencyList[start]) return; 
-        visited.add(start); 
-        console.log(start); 
-
-        
-        for (let neighbor of this.adjacencyList[start]) {
-            if (!visited.has(neighbor)) {
-                this.dfsRecursive(neighbor, visited);
-            }
-        }
+        this.adjacencyList[vertex1].push(vertex2)
+        this.adjacencyList[vertex2].push(vertex1)
     }
 }
 
 const grph = new Graph()
 
-grph.addEdge('a', 'b')
-grph.addEdge('s', 'm')
-grph.addEdge('d', 'k')
-
-console.log(grph.adjecencyList);
+grph.addEdge('a' , 'x')
+grph.addEdge('a' , 'c')
+grph.addEdge('k' , 'm')
+console.log(grph.adjacencyList);
