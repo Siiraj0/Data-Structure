@@ -1465,11 +1465,246 @@ const { inflate } = require("zlib")
 
 
 
-class Node{
+// class Node{
+//     constructor(value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class binarySearchTree{
+//     constructor(){
+//         this.root = null
+//     }
+
+//     isEmpty(){
+//         return this.root === null
+//     }
+
+//     insert(value){
+//         const newNode = new Node(value)
+
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+//     }
+
+//     insertNode(root , newNode){
+//         if(newNode.value < root.value){
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 this.insertNode(root.left , newNode)
+//             }
+//         }else{
+//                 if(root.right === null){
+//                 root.right = newNode
+//             }else{
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
+
+//     min(root){
+//         if(!root.left){
+//             return root.value
+//         }else{
+//             return this.min(root.left)
+//         }
+//     }
+
+//     inOrder(root){
+//         if(root){
+//             this.inOrder(root.left)
+//             console.log(root.value);
+//             this.inOrder(root.right)
+//         }
+//     }
+//     max(root){
+//         if(!root.right){
+//             return root.value
+//         }else{
+//             return this.max(root.right)
+//         }
+//     }
+
+//     isBst(){
+//         return this.validateBst(this.root , -Infinity , Infinity)
+//     }
+
+//     validateBst(node , min , max){
+//         if(!node){
+//             return true
+//         }
+
+//         if(node.value <= min || node.value >= max){
+//             return false
+//         }
+
+//         return this.validateBst(node.left , min , node.value ) && this.validateBst(node.right , node.value , max)
+//     }
+
+//     search(root , value){
+//      if(!root){
+//         return false
+//      }else{
+//         if(root.value === value){
+//             return true
+//         }else if (value < root.value){
+//             return this.search(root.left , value)
+//         }else{
+//             return this.search(root.right , value )
+//         }
+//      }
+//     }
+// }
+
+
+//  const bst = new binarySearchTree()
+
+//  bst.insert(15)
+//  bst.insert(12)
+//  bst.insert(13)
+
+//  console.log(bst.search(bst.root , 15));
+//  console.log(bst.search(bst.root , 12));
+//  console.log(bst.search(bst.root , 16));
+ 
+// console.log('this is the min ',bst.min(bst.root));
+//  console.log('this is the max of bst ' , bst.max(bst.root));
+//  console.log('is that bst' , bst.isBst());
+
+//  console.log(bst.inOrder(bst.root));
+ 
+ 
+
+// class Node{
+//     constructor(value){
+//         this.value = value
+//         this.left = null
+//         this.right = null
+//     }
+// }
+
+// class binarySearchTree{
+//     constructor(){
+//         this.root = null
+//     }
+
+//     isEmpty(){
+//         return this.root === null
+//     }
+
+//     insert(value){
+//         const newNode = new Node(value)
+
+//         if(this.isEmpty()){
+//             this.root = newNode
+//         }else{
+//             this.insertNode(this.root , newNode)
+//         }
+//     }
+
+//     insertNode(root , newNode){
+//         if(newNode.value < root.value){
+//             if(root.left === null){
+//                 root.left = newNode
+//             }else{
+//                 this.insertNode(root.left , newNode)
+//             }
+//         }else{
+//             if(root.right === null){
+//                 root.right = newNode
+//             }else{
+//                 this.insertNode(root.right , newNode)
+//             }
+//         }
+//     }
+
+//     search(root,value){
+//         if(!root){
+//             return false
+//         }
+//         else{
+//             if(root.value === value){
+//                 return true
+//             }else if(value < root.value){
+//                 return this.search(root.left , value)
+//             }else{
+//                 return this.search(root.right , value)
+//             }
+//         }
+//     }
+
+//     max(root){
+//         if(!root.right){
+//             return root.value
+//         }else{
+//             return this.max(root.right)
+//         }
+//     }
+
+//     min(root){
+//         if(!root.left){
+//             return root.value
+//         }else{
+//             return this.min(root.left)
+//         }
+//     }
+
+//     inOrder(root){
+//         if(root){
+//             this.inOrder(root.left)
+//             console.log(root.value);
+//             this.inOrder(root.right)            
+//         }
+//     }
+
+//     isBst(){
+//         return this.validate(this.root , -Infinity , Infinity)
+//     }
+
+//     validate(node , min , max){
+//         if(!node){
+//             return true 
+//         }
+
+//         if(node.value <= min || node.value >= max){
+//             return false
+//         }
+
+//         return this.validate(node.left , min , node.value) && this.validate(node.right , node.value , max)
+//     }
+// }
+
+
+
+//  const bst = new binarySearchTree()
+
+//  bst.insert(15)
+//  bst.insert(12)
+//  bst.insert(13)
+
+//  console.log(bst.search(bst.root , 15));
+//  console.log(bst.search(bst.root , 12));
+//  console.log(bst.search(bst.root , 16));
+ 
+// console.log('this is the min ',bst.min(bst.root));
+//  console.log('this is the max of bst ' , bst.max(bst.root));
+//  console.log('is that bst' , bst.isBst());
+
+//  console.log(bst.inOrder(bst.root));
+
+
+
+class Node {
     constructor(value){
         this.value = value
         this.left = null
-        this.right = null
+        this.right  = null
     }
 }
 
@@ -1483,8 +1718,7 @@ class binarySearchTree{
     }
 
     insert(value){
-        const newNode = new Node(value)
-
+        let newNode = new Node(value)
         if(this.isEmpty()){
             this.root = newNode
         }else{
@@ -1508,34 +1742,42 @@ class binarySearchTree{
         }
     }
 
+    search(root , value){
+        if(!root){
+            return false
+        }
+        else{
+            if(root.value === value){
+                return true
+            }else if(value < root.value){
+                return this.search(root.left , value)
+            }else{
+                return this.search(root.right , value)
+            }
+        }
+    }
+
     min(root){
         if(!root.left){
             return root.value
         }else{
-            return this.min(root.left)
+           return this.min(root.left)
         }
     }
 
-    inOrder(root){
-        if(root){
-            this.inOrder(root.left)
-            console.log(root.value);
-            this.inOrder(root.right)
-        }
-    }
     max(root){
         if(!root.right){
             return root.value
         }else{
-            return this.max(root.right)
+           return this.max(root.right)
         }
     }
 
     isBst(){
-        return this.validateBst(this.root , -Infinity , Infinity)
+        return this.validate(this.root , -Infinity , Infinity)
     }
 
-    validateBst(node , min , max){
+    validate(node , min , max){
         if(!node){
             return true
         }
@@ -1544,23 +1786,13 @@ class binarySearchTree{
             return false
         }
 
-        return this.validateBst(node.left , min , node.value ) && this.validateBst(node.right , node.value , max)
-    }
+        return this.validate(node.left, min , node.value) && this.validate(node.right , node.value , max)
 
-    search(root , value){
-     if(!root){
-        return false
-     }else{
-        if(root.value === value){
-            return true
-        }else if (value < root.value){
-            return this.search(root.left , value)
-        }else{
-            return this.search(root.right , value )
-        }
-     }
     }
 }
+ 
+
+
 
 
  const bst = new binarySearchTree()
@@ -1576,7 +1808,3 @@ class binarySearchTree{
 console.log('this is the min ',bst.min(bst.root));
  console.log('this is the max of bst ' , bst.max(bst.root));
  console.log('is that bst' , bst.isBst());
-
- console.log(bst.inOrder(bst.root));
- 
- 
