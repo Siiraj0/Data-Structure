@@ -10,7 +10,7 @@
 // class linkedList {
 //     constructor(){
 //         this.head = null
-//         this.size = 0
+//         this.size = 0                                                                                                                                            
 //     }
 
 //     isEmpty(){
